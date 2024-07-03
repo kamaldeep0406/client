@@ -9,7 +9,7 @@ import { downloadMedia, formatDate } from '../../../utils/common-utils';
 import { iconPDF } from '../../../constants/data';
 
 const Wrapper = styled(Box)`
-    background: #9BA273;
+    background: #424874;
     padding: 5px;
     max-width: 60%;
     width: fit-content;
@@ -19,7 +19,7 @@ const Wrapper = styled(Box)`
 `;
     
 const Own = styled(Box)`
-    background: #628AB8;
+    background: #3FA2F6;
     padding: 5px;
     max-width: 60%;
     width: fit-content;
@@ -31,6 +31,7 @@ const Own = styled(Box)`
 
 const Text = styled(Typography)`
     font-size: 14px;
+    color: #ffffff;
     padding: 0 25px 0 5px;
 `;
 
@@ -71,7 +72,7 @@ const TextMessage = ({ message }) => {
     return (
         <>
             <Text>{message.text}</Text>
-            <Time></Time>
+            <Time>{formatDate(message.createdAt)}</Time>
         </>
     )
 }

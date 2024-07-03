@@ -7,7 +7,7 @@ import { uploadFile } from '../../../service/api';
 
 const Container = styled(Box)`
     height: 55px;
-    background-color: #707274
+    background-color: #DCD6F7
     width: 100%;
     display: flex;
     align-items: center;
@@ -31,7 +31,7 @@ const InputField = styled(InputBase)`
     font-size: 14px;
     height: 20px;
     width: 100%;
-    background: #B7B9BB;
+    background: #DCD6F7;
 `;
 
 const ClipIcon = styled(AttachFile)`
@@ -64,7 +64,7 @@ const Footer = ({ sendText, value, setValue, setFile, file, setImage }) => {
         <Container>
             {/* <EmojiEmotions /> */}
             <label htmlFor="fileInput">
-                {/* <ClipIcon /> */}
+                <ClipIcon /> 
             </label>
             <input
                 type='file'

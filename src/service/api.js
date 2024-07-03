@@ -1,7 +1,8 @@
   
 import axios from 'axios';
 
-const url = 'https://server-2-m45c.onrender.com';
+// const url = 'https://server-2-m45c.onrender.com';
+const url = 'https://server-2-68wg.onrender.com';
 
 export const addUser = async (data) => {
     try {

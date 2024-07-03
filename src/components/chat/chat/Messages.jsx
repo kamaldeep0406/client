@@ -13,7 +13,8 @@ import Footer from './Footer';
 const Wrapper = styled(Box)`
     // background-image: url(${'https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png'});
     background-size: 50%;
-    background-color: #707274
+    background-color: #F4EEFF
+    
 `;
 
 const StyledFooter = styled(Box)`
@@ -23,7 +24,7 @@ const StyledFooter = styled(Box)`
     width: 100%;
     // bottom: 0
 `;
-    
+
 const Component = styled(Box)`
     height: 80vh;
     overflow-y: scroll;
@@ -55,7 +56,7 @@ const Messages = ({ person, conversation }) => {
             })
         })
     }, []);
-    
+
     useEffect(() => {
         const getMessageDetails = async () => {
             let data = await getMessages(conversation?._id);
@@ -68,19 +69,29 @@ const Messages = ({ person, conversation }) => {
         scrollRef.current?.scrollIntoView({ transition: "smooth" })
     }, [messages]);
 
+    // Notification.requestPermission();
+    //         new Notification("New Message", {
+    //             body:incomingMessage.text
+    //         })
+
     useEffect(() => {
-        incomingMessage && conversation?.members?.includes(incomingMessage.senderId) && 
+        if (incomingMessage && conversation?.members?.includes(incomingMessage.senderId)) {
             setMessages((prev) => [...prev, incomingMessage]);
-        
+            Notification.requestPermission();
+            new Notification("New Message", {
+                body: incomingMessage.text
+            })
+        }
+
     }, [incomingMessage, conversation]);
 
     const receiverId = conversation?.members?.find(member => member !== account.sub);
-    
+
     const sendText = async (e) => {
         let code = e.keyCode || e.which;
-        if(!value) return;
+        if (!value) return;
 
-        if(code === 13) { 
+        if (code === 13) {
             let message = {};
             if (!file) {
                 message = {
@@ -108,7 +119,7 @@ const Messages = ({ person, conversation }) => {
             setFile();
             setImage('');
             setNewMessageFlag(prev => !prev);
-        } 
+        }
     }
 
     return (
@@ -122,12 +133,12 @@ const Messages = ({ person, conversation }) => {
                     ))
                 }
             </Component>
-            <Footer 
-                sendText={sendText} 
-                value={value} 
-                setValue={setValue} 
-                setFile={setFile} 
-                file={file} 
+            <Footer
+                sendText={sendText}
+                value={value}
+                setValue={setValue}
+                setFile={setFile}
+                file={file}
                 setImage={setImage}
             />
         </Wrapper>

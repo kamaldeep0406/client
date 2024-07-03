@@ -9,12 +9,12 @@ import LoginDialog from './account/LoginDialog';
 
 const Component = styled(Box)`
     height: 100vh;
-    background: #DCDCDC;
+    background: #F4EEFF;
 `;
 
 const Header = styled(AppBar)`
-    background-color: #707274;
-    height: 1225px;
+    background-color: #A6B1E1;
+    height: 0px;
     box-shadow: none;
 `;
     

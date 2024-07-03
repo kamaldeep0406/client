@@ -3,7 +3,7 @@ import { Box, InputBase, styled } from '@mui/material';
 import { Search as SearchIcon } from '@mui/icons-material';
 
 const Component = styled(Box)`
-    background: #707274;
+    background: #F4EEFF;
     height: 45px;
     display: flex;
     align-items: center;
@@ -32,7 +32,7 @@ const InputField = styled(InputBase) `
     font-size: 14px;
     height: 15px;
     width: 100%;
-    background: #B7B9BB;
+    background: #DCD6F7;
 `;
 
 const Search = ({ setText }) => {

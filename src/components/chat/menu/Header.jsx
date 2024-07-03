@@ -11,7 +11,7 @@ import InfoDrawer from '../../drawer/Drawer';
 
 const Component = styled(Box)`
     height: 44px;
-    background: #868889;
+    background: #A6B1E1;
     display: flex;
     padding: 8px 16px;
     align-items: center;

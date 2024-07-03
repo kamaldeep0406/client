@@ -11,7 +11,7 @@ import { getUsers } from '../../../service/api';
 const Component = styled(Box)`
     overflow: overlay;
     height: 81vh;
-    background-color: #707274
+    background-color: #F4EEFF
 `;
 
 const StyledDivider = styled(Divider)`
